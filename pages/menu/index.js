@@ -3,7 +3,6 @@ import { getCategoriesWithFoods } from "../../services";
 import Image from "next/image";
 
 const MenuPage = ({ categories }) => {
-  console.log(categories);
   return (
     <>
       {categories.map((category) => (
@@ -16,9 +15,9 @@ const MenuPage = ({ categories }) => {
           </div>
           <div className="w-5/6 mx-auto flex flex-wrap items-center gap-3 gap-y-5">
             {category.foods.map((food) => (
-              <div className="card w-80 h-80 rounded-md">
+              <div className="card w-80 h-80 rounded-md" key={food.title}>
                 <div className="relative overflow-hidden w-full h-3/4 bg-gray-100 shadow-md rounded-t-md">
-                  {/* <div className="absolute top-0 left-0 w-full h-full hover:bg-black z-10" style={{ opacity: .3 }}/> */}
+                  {/* <div className="absolute top-0 left-0 w-full h-full hover:bg-black opacity-30 z-10" /> */}
                   <div className="absolute top-3 right-3 z-10">
                     {food.spicy && (
                       <div className="flex justify-center items-center text-red-900 bg-red-200 font-bold w-14 h-6 rounded-sm text-xs mb-1 shadow">

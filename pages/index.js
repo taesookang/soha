@@ -1,8 +1,8 @@
-import { Main, MiddleSection, BottomSection } from '../components'
+import { Main, MiddleSection, BottomSection } from "../components";
 import Head from "next/head";
+import { getMainImages, getSpecialsImages, getMoments } from "../services";
 
-
-export default function Home() {
+export default function Home({ mainImages, specialsImages, moments }) {
   return (
     <div className="">
       <Head>
@@ -10,13 +10,27 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {/* main section */}
-      <Main />
-      <div className='spacer'/>
+      <Main images={mainImages} />
+      <div className="spacer" />
       {/* middle section */}
-      <MiddleSection />
-      <div className='spacer'/>
+      <MiddleSection images={specialsImages} />
+      <div className="spacer" />
       {/* bottom section */}
-      <BottomSection />
+      <BottomSection moments={moments} />
     </div>
   );
+}
+
+export async function getStaticProps() {
+  const mainImages = await getMainImages();
+  const specialsImages = await getSpecialsImages();
+  const moments = await getMoments();
+
+  return {
+    props: {
+      mainImages: mainImages,
+      specialsImages: specialsImages,
+      moments: moments,
+    },
+  };
 }

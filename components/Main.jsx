@@ -24,22 +24,32 @@ const responsive = {
   },
 };
 
-const Main = () => {
+const Main = ({ images }) => {
   return (
     <div className="relative w-full h-75vh max-h-800">
-      <Carousel responsive={responsive} showDots={true}>
-        <div className="w-full h-75vh max-h-800">
-          <div className="main_image_filter" />
-          <Image
-          priority
-            className="main_image"
-            src="/main_1.jpeg"
-            layout="fill"
-            objectFit="cover"
-            objectPosition={"left top"}
-          />
-        </div>
-        
+      <Carousel
+        responsive={responsive}
+        showDots={true}
+        infinite
+        removeArrowOnDeviceType={["mobile"]}
+        autoPlay={true}
+        autoPlaySpeed={6000}
+        transitionDuration={1000}
+      >
+        {images.map((img) => (
+          <div className="w-full h-75vh max-h-800" key={img.id}>
+            <>
+              <div className="absolute top-0 left-0 w-full min-h-full z-10 bg-black/40" />
+              <Image
+                priority
+                src={img.image.url}
+                layout="fill"
+                objectFit="cover"
+                objectPosition={"left top"}
+              />
+            </>
+          </div>
+        ))}
       </Carousel>
       <div className="absolute top-0 left-0 w-full h-full">
         <MainPoster />
