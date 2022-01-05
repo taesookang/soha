@@ -4,7 +4,7 @@ import { getMainImages, getSpecialsImages, getMoments } from "../services";
 
 export default function Home({ mainImages, specialsImages, moments }) {
   return (
-    <div className="">
+    <div>
       <Head>
         <title>Soju Haus | NYC</title>
         <link rel="icon" href="/favicon.ico" />

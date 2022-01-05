@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Carousel from "react-multi-carousel";
-import { Button, MainPoster } from ".";
+import { MainPoster, Arrow } from ".";
 
 const responsive = {
   superLargeDesktop: {
@@ -24,6 +24,7 @@ const responsive = {
   },
 };
 
+
 const Main = ({ images }) => {
   return (
     <div className="relative w-full h-75vh max-h-800">
@@ -35,6 +36,8 @@ const Main = ({ images }) => {
         autoPlay={true}
         autoPlaySpeed={6000}
         transitionDuration={1000}
+        customRightArrow={<Arrow direction="right"/>}
+        customLeftArrow={<Arrow direction="left"/>}
       >
         {images.map((img) => (
           <div className="w-full h-75vh max-h-800" key={img.id}>

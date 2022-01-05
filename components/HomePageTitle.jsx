@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Title = ({ text }) => {
+const HomePageTitle = ({ text }) => {
 
     const words = text.split(" ")
     return (
@@ -10,4 +10,4 @@ const Title = ({ text }) => {
     )
 }
 
-export default Title
+export default HomePageTitle

@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { Button, Title } from ".";
+import { Button, HomePageTitle, Arrow } from ".";
 import Carousel from "react-multi-carousel";
 
 const responsive = {
@@ -26,25 +26,36 @@ const responsive = {
 const BottomSection = ({ moments }) => {
   return (
     <div className="w-full min-h-800 flex items-center justify-center flex-col ">
-      <Title text="the moments" />
+      <HomePageTitle text="the moments" />
       <div className="w-4/5 my-12">
-        <Carousel responsive={responsive} swipeable={true} containerClass="h-400 px-8 ml-10">
+        <Carousel
+          responsive={responsive}
+          swipeable={true}
+          itemClass="mr-2"
+          customRightArrow={<Arrow direction="right" />}
+          customLeftArrow={<Arrow direction="left" />}
+        >
           {moments.map((moment) => (
-
-          <div className="card w-80 h-96 p-4" key={moment.id}>
-            <div className="relative w-full h-2/3 bg-gray-100">
-              <Image src={moment.image.url} layout="fill" objectFit="cover" />
+            <div
+              className="card aspect-[6/7] w-full sm:w-[90%] p-4 my-4"
+              key={moment.id}
+            >
+              <div className="relative w-full h-2/3 bg-gray-100">
+                <Image src={moment.image.url} layout="fill" objectFit="cover" />
+              </div>
+              <div className="w-full h-1/3 mt-2 py-4 flex items-center justify-center">
+                <p
+                  id="text_caveat"
+                  className="text-lg md:text-xl leading-5 text-gray-500 px-2 lg:px-4"
+                >
+                  {moment.caption}
+                </p>
+              </div>
             </div>
-            <div className="w-full h-1/3 mt-2 py-4">
-              <p id="text_caveat" className="text-2xl text-gray-500 px-4">
-                {moment.caption}
-              </p>
-            </div>
-          </div>
           ))}
         </Carousel>
       </div>
-        <Button text="view more moments" width={200} />
+      <Button text="view more moments" width={200} />
     </div>
   );
 };

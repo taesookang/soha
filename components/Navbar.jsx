@@ -6,14 +6,13 @@ import { useRouter } from 'next/router'
 const navlinks = [
   { path: "/", title: "Home", link: "/" },
   { path: "/menu", title: "Menu", link: "/menu" },
-  { path: "/events", title: "Events", link: "/_error" },
+  { path: "/events", title: "Events", link: "/events" },
   { path: "/moments", title: "Moments", link: "/moments" },
-  { path: "/reservation", title: "Reservation", link: "/reservation" },
+  { path: "/reservation", title: "Reservation", link: "https://www.opentable.com/restref/client/?restref=270343&corrid=60c7575f-1899-4f38-808e-b319f4dad1d6" },
 ];
 
 const Navbar = () => {
   const router = useRouter()
-  console.log(router.pathname);
 
   return (
     <div className="header w-full h-16 bg-white flex items-center justify-between px-5 sticky top-0 z-50">
@@ -30,21 +29,19 @@ const Navbar = () => {
 
       <div className="nav hidden md:flex h-full ">
         {navlinks.map((link) => (
-          <Link href={link.link} key={link.title}>
-            <a
+            <a href={link.link} key={link.title}
               className={`px-6 flex justify-center items-center cursor-pointer transition duration-300 ${
-                // router.pathname.includes(link.path)
                 router.pathname === link.link
                   ? "text-brand bg-brand-light"
                   : "text-gray-400 hover:text-gray-600 hover:bg-gray-100"
               } `}
-              // onClick={() => {
-              //   setCurrentPath(link.id);
-              // }}
+              onClick={(e) => {
+                e.preventDefault()
+                router.push(link.link)
+              }}
             >
               {link.title}
             </a>
-          </Link>
         ))}
       </div>
     </div>

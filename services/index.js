@@ -80,3 +80,26 @@ export const getMoments = async () => {
 
   return result.moments;
 };
+
+export const getEvents = async () => {
+  const query = gql`
+    query GetEvents {
+      events {
+        id
+        title
+        startDate
+        endDate
+        description {
+          raw
+        }
+        image {
+          url
+        }
+        link
+      }
+    }
+  `;
+  const result = await request(graphqlAPI, query);
+
+  return result.events;
+};
