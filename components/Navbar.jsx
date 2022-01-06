@@ -32,9 +32,9 @@ const Navbar = () => {
         <div className="logo">
           <Link href="/">
             <a className="relative w-44 flex items-center justify-between">
-              <Image src="/logo.svg" width={50} height={50} />
+              <Image src="/images/logo.svg" width={50} height={50} />
               <div className="relative hidden sm:flex">
-                <Image src="/logo_title.svg" width={120} height={50} />
+                <Image src="/images/logo_title.svg" width={120} height={50} />
               </div>
             </a>
           </Link>

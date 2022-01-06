@@ -9,12 +9,17 @@ const SocialLinks = ({ size }) => {
         <>
             <Link href="https://www.instagram.com/sojuhaus/">
             <a target='_blank' rel="noreferrer">
-              <Image src={"/instagram.svg"} width={size} height={size} />
+              <Image src={"/images/instagram.svg"} width={size} height={size} />
             </a>
           </Link>
           <Link href="https://www.facebook.com/SojuHaus/">
             <a target='_blank' rel="noreferrer">
-              <Image src={"/facebook.svg"} width={size} height={size} />
+              <Image src={"/images/facebook.svg"} width={size} height={size} />
+            </a>
+          </Link>
+          <Link href="https://www.youtube.com/c/SojuHausNewYork">
+            <a target='_blank' rel="noreferrer">
+              <Image src={"/images/Youtube.svg"} width={size} height={size} />
             </a>
           </Link>
         </>

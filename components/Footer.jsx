@@ -27,7 +27,7 @@ const Footer = () => {
     <div className="relative w-11/12 mx-auto hidden sm:flex flex-col items-center justify-center border-t border-gray-300 mt-36">
       <div className="absolute w-14 h-14 -top-7 bg-white rounded-full border border-gray-300 flex justify-center items-center">
         <div className="relative w-5/6 h-5/6">
-        <Image src={"/logo.svg"} layout="fill" />
+        <Image src={"/images/logo.svg"} layout="fill" />
         </div>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-16 mt-12">
