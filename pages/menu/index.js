@@ -15,23 +15,22 @@ const MenuPage = ({ categories }) => {
                 <div className="relative overflow-hidden w-full h-3/4 bg-gray-100 shadow-md rounded-t-md">
                   {/* <div className="absolute top-0 left-0 w-full h-full hover:bg-black opacity-30 z-10" /> */}
                   <div className="absolute top-3 right-3 z-10">
-                    {food.spicy && (
-                      <Badge theme="red" text="spicy" />
-                    )}
-                    {food.veg && (
-                      <Badge theme="green" text="vegan" />
- 
-                    )}
+                    {food.spicy && <Badge type="spicy" />}
+                    {food.veg && <Badge type="vegan" />}
                   </div>
                   )
                   <Image src={food.image.url} layout="fill" objectFit="cover" />
                 </div>
                 <div className="w-full h-1/4 px-4 pt-4 flex justify-between">
-                    <div>
-                     <p className="text-gray-800 font-bold capitalize">{food.title}</p>
-                     <p className="text-gray-500 text-sm capitalize">{food.titleKr}</p>
-                     </div>
-                     <span className="text-brand">${food.price}</span>
+                  <div>
+                    <p className="text-gray-800 font-bold capitalize">
+                      {food.title}
+                    </p>
+                    <p className="text-gray-500 text-sm capitalize">
+                      {food.titleKr}
+                    </p>
+                  </div>
+                  <span className="text-brand">${food.price}</span>
                 </div>
               </div>
             ))}

@@ -31,9 +31,11 @@ const BottomSection = ({ moments }) => {
         <Carousel
           responsive={responsive}
           swipeable={true}
-          itemClass="mr-2"
-          customRightArrow={<Arrow direction="right" />}
+          itemClass="flex justify-center items-center"
+          containerClass="px-2"
+          customRightArrow={<Arrow direction="right"  />}
           customLeftArrow={<Arrow direction="left" />}
+          removeArrowOnDeviceType={["mobile"]}
         >
           {moments.map((moment) => (
             <div

@@ -22,7 +22,7 @@ const RichTextRenderer = ({ content }) => (
       h2: ({ children }) => <b className="text-xl">{children}</b>,
       h3: ({ children }) => <b className="text-lg">{children}</b>,
       p: ({ children }) => (
-        <p className="text-gray-500 text-sm md:text-base mb-2">{children}</p>
+        <p className="text-gray-500 text-sm sm:text-base mb-2">{children}</p>
       ),
       bold: ({ children }) => <b className="text-black">{children}</b>,
     }}
@@ -31,13 +31,13 @@ const RichTextRenderer = ({ content }) => (
 
 const EventCard = ({ event }) => {
   return (
-    <div className="card flex justify-between mx-auto mb-4 w-3/4 h-48 rounded-sm overflow-hidden">
-      <div className="relative aspect-square h-full bg-gray-50">
+    <div className="card flex flex-col lg:flex-row justify-between mx-auto mb-4 w-4/5 md:w-3/4 lg:h-48 rounded-sm overflow-hidden">
+      <div className="relative aspect-square w-full lg:w-auto lg:h-full bg-gray-50">
         <Image src={event.image.url} layout="fill" objectFit="cover" />
       </div>
       <div className="w-full px-6 py-4">
-        <div className="w-full flex items-center justify-between mb-4">
-          <h1 className="capitalize text-xl text-brand font-bold">
+        <div className="w-full flex flex-col lg:flex-row items-center justify-between mb-4">
+          <h1 className="capitalize text-xl my-4 lg:my-auto text-brand font-bold">
             {event.title}
           </h1>
           <div className="flex justify-center items-center">
@@ -49,9 +49,9 @@ const EventCard = ({ event }) => {
         </div>
         <RichTextRenderer content={event.description.raw} />
       </div>
-      <div className="flex justify-center items-center w-1/5 my-6 border-l border-gray-200 text-sm text-brand text-center">
+      <div className="flex justify-center items-center mx-6 lg:mx-auto lg:w-1/5 py-8 lg:py-0 my-0 lg:my-6 border-t lg:border-t-0 lg:border-l border-gray-200">
         <Link href={event.link}>
-          <a target="_blank" rel="noreferrer">
+          <a target="_blank" rel="noreferrer" className="whitespace-nowrap text-base lg:text-sm text-brand text-center">
             Veiw Details
           </a>
         </Link>

@@ -1,12 +1,12 @@
-import React, { useState, useContext, createContext, useEffect } from "react";
+import React, { useState, useContext, createContext } from "react";
 
 const GlobalContext = createContext();
 
 export const GlobalContextProvider = ({ children }) => {
-  const [currentTab, setCurrentTab] = useState("/");
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <GlobalContext.Provider value={{currentTab, setCurrentTab}}>
+    <GlobalContext.Provider value={{ menuOpen, setMenuOpen }}>
       {children}
     </GlobalContext.Provider>
   );

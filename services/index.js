@@ -1,4 +1,5 @@
 import { request, gql } from "graphql-request";
+import { useEffect } from 'react'
 
 const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT;
 
@@ -102,4 +103,20 @@ export const getEvents = async () => {
   const result = await request(graphqlAPI, query);
 
   return result.events;
+};
+
+export const useOutsideClick = (ref, callback) => {
+  const handleClick = e => {
+    if (ref.current && !ref.current.contains(e.target)) {
+      callback();
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("click", handleClick);
+
+    return () => {
+      document.removeEventListener("click", handleClick);
+    };
+  });
 };

@@ -45,15 +45,6 @@ const EventPage = ({ events }) => {
     return { eventsUpcoming, eventsNow, eventsPast };
   };
 
-//   console.log(
-//     "upcoming:",
-//     eventsUpcoming,
-//     "now:",
-//     eventsNow,
-//     "past:",
-//     eventsPast
-//   );
-
   return (
     <>
       <div className="container mx-auto">

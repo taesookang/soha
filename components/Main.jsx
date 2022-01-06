@@ -36,12 +36,11 @@ const Main = ({ images }) => {
         autoPlay={true}
         autoPlaySpeed={6000}
         transitionDuration={1000}
-        customRightArrow={<Arrow direction="right"/>}
-        customLeftArrow={<Arrow direction="left"/>}
+        customRightArrow={<Arrow direction="Right" />}
+        customLeftArrow={<Arrow direction="left" />}
       >
         {images.map((img) => (
-          <div className="w-full h-75vh max-h-800" key={img.id}>
-            <>
+          <div className="relative w-full h-75vh max-h-800" key={img.id}>
               <div className="absolute top-0 left-0 w-full min-h-full z-10 bg-black/40" />
               <Image
                 priority
@@ -50,7 +49,6 @@ const Main = ({ images }) => {
                 objectFit="cover"
                 objectPosition={"left top"}
               />
-            </>
           </div>
         ))}
       </Carousel>
