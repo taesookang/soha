@@ -1,14 +1,13 @@
-import React from "react";
+import React from 'react'
 
-const SectionTitle = ({ title, titleKr = null }) => {
-  return (
-    <div className="capitalize w-full border-b-2 bg-white border-brand px-4 my-12 pb-2 text-brand text-xl sticky top-[64px] z-30">
-      {title}
-      {titleKr && (
-        <span className="text-base ml-4 text-gray-500">{titleKr}</span>
-      )}
-    </div>
-  );
-};
+const SectionTitle = ({ text }) => {
 
-export default SectionTitle;
+    const words = text.split(" ")
+    return (
+        <h1 className="uppercase text-xl sm:text-3xl my-4">
+        {words[0]} <span className="text-brand">{words[1]}</span>
+      </h1>
+    )
+}
+
+export default SectionTitle

@@ -6,7 +6,7 @@ const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT;
 export const getCategoriesWithFoods = async () => {
   const query = gql`
     query GetCategoriesWithFoods {
-      categoriesConnection {
+      categoriesConnection(orderBy: order_ASC) {
         edges {
           node {
             id
@@ -54,6 +54,7 @@ export const getSpecialsImages = async () => {
     query GetSpecialsImages {
       foods(where: { category: { title: "Specials" } }, first: 4) {
         id
+        title
         image {
           url
         }

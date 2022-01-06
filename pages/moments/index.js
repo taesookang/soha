@@ -1,12 +1,12 @@
 import React from "react";
 import Image from 'next/image'
-import { SectionTitle } from "../../components";
+import { StickyTitle } from "../../components";
 import { getMoments } from "../../services";
 
 const MomentsPage = ({ moments }) => {
   return (
     <div className="container mx-auto">
-      <SectionTitle title="Moments" />
+      <StickyTitle title="Moments" />
       <div className="grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-2 p-8">
       {moments.map((moment) => (
           <div key={moment.id} className="relative aspect-square bg-gray-50 lg:hover:scale-105 transition ease-in rounded-sm overflow-hidden">

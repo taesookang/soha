@@ -1,4 +1,4 @@
-import { Main, MiddleSection, BottomSection } from "../components";
+import { Main, SpecialsSection, MomentsSection } from "../components";
 import Head from "next/head";
 import { getMainImages, getSpecialsImages, getMoments } from "../services";
 
@@ -16,10 +16,10 @@ export default function Home({ mainImages, specialsImages, moments }) {
       <Main images={mainImages} />
       <div className="spacer" />
       {/* middle section */}
-      <MiddleSection images={specialsImages} />
+      <SpecialsSection images={specialsImages} />
       <div className="spacer" />
       {/* bottom section */}
-      <BottomSection moments={moments} />
+      <MomentsSection moments={moments} />
     </div>
   );
 }

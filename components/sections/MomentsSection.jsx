@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { Button, HomePageTitle, Arrow } from ".";
+import { Button, Arrow, Section } from "..";
 import Carousel from "react-multi-carousel";
 
 const responsive = {
@@ -23,10 +23,10 @@ const responsive = {
   },
 };
 
-const BottomSection = ({ moments }) => {
+
+const MomentsSections = ({ moments }) => {
   return (
-    <div className="w-full min-h-800 flex items-center justify-center flex-col ">
-      <HomePageTitle text="the moments" />
+    <Section title="the moments">
       <div className="w-4/5 my-12">
         <Carousel
           responsive={responsive}
@@ -57,9 +57,9 @@ const BottomSection = ({ moments }) => {
           ))}
         </Carousel>
       </div>
-      <Button text="view more moments" width={200} />
-    </div>
+      <Button text="view more moments" width={200} link={"/moments"} />
+    </Section>
   );
 };
 
-export default BottomSection;
+export default MomentsSections;

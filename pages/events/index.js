@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { EventCard, SectionTitle } from "../../components";
+import { EventCard, StickyTitle } from "../../components";
 
 import { getEvents } from "../../services";
 // import moment from 'moment'
@@ -48,19 +48,19 @@ const EventPage = ({ events }) => {
   return (
     <>
       <div className="container mx-auto">
-        <SectionTitle title="events" />
+        <StickyTitle title="events" />
         {eventsNow.map((event) => (
           <EventCard event={event} key={event.id} />
         ))}
       </div>
       <div className="container mx-auto">
-        <SectionTitle title="upcoming events" />
+        <StickyTitle title="upcoming events" />
         {eventsUpcoming.map((event) => (
           <EventCard event={event} key={event.id} />
         ))}
       </div>
       <div className="container mx-auto">
-        <SectionTitle title="past events" />
+        <StickyTitle title="past events" />
         {eventsPast.map((event) => (
           <EventCard event={event} key={event.id} />
         ))}

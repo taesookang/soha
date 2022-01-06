@@ -7,7 +7,8 @@ const Button = ({ width=160, height=50, link="/", text }) => {
       <a className={`capitalize flex items-center justify-center bg-brand text-white text-sm shadow-md rounded-sm transition duration-500 hover:-translate-y-1 `}
         style={{
             width: width,
-            height: height
+            height: height,
+            minHeight: height
         }}
       >
           {text}
