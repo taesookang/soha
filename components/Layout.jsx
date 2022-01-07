@@ -9,7 +9,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Navbar />
-      <div className={`w-full h-full ${menuOpen && "blur-sm"} transition duration-1000`}>
+      <div className={`w-full h-full ${menuOpen && "blur-sm"} transition duration-500`}>
       {children}
       </div>
       <Footer />
