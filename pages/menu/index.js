@@ -9,7 +9,7 @@ const MenuPage = ({ categories }) => {
       {categories.map((category) => (
         <div className="container mx-auto mb-12" key={category.id}>
           <StickyTitle title={category.title} titleKr={category.titleKr} />
-          <div className="w-5/6 sm:w-full mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 gap-y-5">
+          <div className="w-[90%] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 gap-y-5">
             {category.foods.map((food) => (
               <div className="card w-full aspect-square rounded-md" key={food.title}>
                 <div className="relative overflow-hidden w-full h-3/4 min-h-[240px] bg-gray-100 shadow-md rounded-t-md">
