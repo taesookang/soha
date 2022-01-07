@@ -64,7 +64,9 @@ const MomentsSections = ({ moments }) => {
           ))}
         </Carousel>
       </div>
+      <div className="my-12">
       <Button text="view more moments" width={200} link={"/moments"} />
+      </div>
     </Section>
   );
 };

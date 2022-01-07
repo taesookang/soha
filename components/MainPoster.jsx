@@ -16,7 +16,9 @@ const MainPoster = () => {
               We’re proud to serve the most authentic Korean foods & drinks in
               NYC
             </p>
+            <div className='my-4'>
             <Button text="View Menu" link='/menu' />
+            </div>
           </div>
         </div>
     )

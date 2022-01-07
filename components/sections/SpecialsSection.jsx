@@ -15,7 +15,9 @@ const SpecialsSection = ({ images }) => {
           </div>
         ))}
       </div>
+      <div className="my-12">
         <Button text="view all specials" width={200} link={"/menu"} />
+        </div>
     </Section>
   );
 };
