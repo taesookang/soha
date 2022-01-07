@@ -7,21 +7,21 @@ const MenuPage = ({ categories }) => {
   return (
     <>
       {categories.map((category) => (
-        <div className="container mx-auto" key={category.id}>
+        <div className="container mx-auto mb-12" key={category.id}>
           <StickyTitle title={category.title} titleKr={category.titleKr} />
-          <div className="w-5/6 mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 gap-y-5">
+          <div className="w-5/6 sm:w-full mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 gap-y-5">
             {category.foods.map((food) => (
               <div className="card w-full aspect-square rounded-md" key={food.title}>
-                <div className="relative overflow-hidden w-full h-3/4 bg-gray-100 shadow-md rounded-t-md">
+                <div className="relative overflow-hidden w-full h-3/4 min-h-[240px] bg-gray-100 shadow-md rounded-t-md">
                   {/* <div className="absolute top-0 left-0 w-full h-full hover:bg-black opacity-30 z-10" /> */}
                   <div className="absolute top-3 right-3 z-10">
                     {food.spicy && <Badge type="spicy" />}
                     {food.veg && <Badge type="vegan" />}
                   </div>
                   )
-                  <Image src={food.image.url} layout="fill" objectFit="cover" />
+                  <Image src={food.image.url} layout="fill" objectFit="cover" objectPosition="center" />
                 </div>
-                <div className="w-full h-1/4 px-4 pt-4 flex justify-between">
+                <div className="w-full h-1/4 min-h-[80px] px-4 pt-4 flex justify-between">
                   <div>
                     <p className="text-gray-800 font-bold capitalize xl:text-sm">
                       {food.title}

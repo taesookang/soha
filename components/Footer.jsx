@@ -32,28 +32,32 @@ const Footer = () => {
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-16 mt-12">
         {/* contact */}
-        <div className="flex flex-col">
+        <div className="flex flex-col items-center">
           <span className="font-bold mb-4">Contact</span>
+          <div className="pl-6">
           {contacts.map((contact, index) => (
-            <div className="flex items-start my-2" key={index}>
+            <div className="flex my-2" key={index}>
               <div className="mr-2">{contact.icon}</div>
               <p className="text-gray-600 text-sm">{contact.title}</p>
             </div>
           ))}
+          </div>
         </div>
         {/* Hours */}
-        <div className="flex flex-col">
+        <div className="flex flex-col items-center">
           <span className="font-bold mb-4">Hours</span>
+          <div>
           <p className="text-gray-600 text-sm my-1">Sun - Wed : 4pm - 1am</p>
           <p className="text-gray-600 text-sm my-1">Thu : 4pm - 2am </p>
           <p className="text-gray-600 text-sm my-1">Fri & Sat : 4pm - 3am </p>
           <p className="text-gray-600 text-sm my-1">
             Delivery & Pickup : 4pm - 11pm{" "}
           </p>
+          </div>
         </div>
         {/* Social link */}
-        <div className="flex flex-col w-44">
-          <span className="font-bold mb-4">Follow us</span>
+        <div className="flex flex-col items-center">
+          <span className="font-bold mb-2">Follow us</span>
           <SocialLinks size={40} />
         </div>
       </div>

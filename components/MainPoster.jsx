@@ -12,11 +12,11 @@ const MainPoster = () => {
             <p className="text-brand font-bold text-2xl md:text-4xl">DISTILLED</p>
             <p className="text-brand font-bold text-2xl md:text-4xl">SPIRITS</p>
             <div className="w-14 h-2 bg-brand mt-4 " />
-            <p className="my-4 text-xs md:text-lg w-3/5 text-center opacity-60">
+            <p className="my-4 text-xs md:text-lg w-3/5 text-center opacity-70">
               We’re proud to serve the most authentic Korean foods & drinks in
               NYC
             </p>
-            <Button text="View Menu" />
+            <Button text="View Menu" link='/menu' />
           </div>
         </div>
     )

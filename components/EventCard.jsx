@@ -32,8 +32,8 @@ const RichTextRenderer = ({ content }) => (
 const EventCard = ({ event }) => {
   return (
     <div className="card flex flex-col lg:flex-row justify-between mx-auto mb-4 w-4/5 md:w-3/4 lg:h-48 rounded-sm overflow-hidden">
-      <div className="relative aspect-square w-full lg:w-auto lg:h-full bg-gray-50">
-        <Image src={event.image.url} layout="fill" objectFit="cover" />
+      <div className="relative aspect-square w-full min-h-[300px] sm:min-h-0 lg:w-auto lg:h-full bg-gray-50">
+        <Image src={event.image.url} layout="fill" objectFit="cover" objectPosition="top left" />
       </div>
       <div className="w-full px-6 py-4">
         <div className="w-full flex flex-col lg:flex-row items-center justify-between mb-4">

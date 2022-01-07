@@ -6,19 +6,23 @@ import Carousel from "react-multi-carousel";
 const responsive = {
   superLargeDesktop: {
     // the naming can be any, depends on you.
-    breakpoint: { max: 4000, min: 3000 },
+    breakpoint: { max: 4000, min: 1536 },
     items: 5,
   },
+  largeDesktop: {
+    breakpoint: { max: 1536, min: 1280 },
+    items: 3,
+  },
   desktop: {
-    breakpoint: { max: 3000, min: 1024 },
+    breakpoint: { max: 1280, min: 1024 },
     items: 3,
   },
   tablet: {
-    breakpoint: { max: 1024, min: 464 },
+    breakpoint: { max: 1024, min: 640 },
     items: 2,
   },
   mobile: {
-    breakpoint: { max: 464, min: 0 },
+    breakpoint: { max: 640, min: 0 },
     items: 1,
   },
 };
@@ -27,22 +31,25 @@ const responsive = {
 const MomentsSections = ({ moments }) => {
   return (
     <Section title="the moments">
-      <div className="w-4/5 my-12">
+      <div className="w-5/6">
         <Carousel
           responsive={responsive}
-          swipeable={true}
-          itemClass="flex justify-center items-center"
-          containerClass="px-2"
+          // swipeable={true}
+          draggable={true}
+          itemClass="flex justify-center items-center max-w-[340px] sm:max-w-full px-2 "
+          containerClass="px-1"
           customRightArrow={<Arrow direction="right"  />}
           customLeftArrow={<Arrow direction="left" />}
           removeArrowOnDeviceType={["mobile"]}
+          customTransition="all .5s"
+          infinite
         >
           {moments.map((moment) => (
             <div
-              className="card aspect-[6/7] w-full sm:w-[90%] p-4 my-4"
+              className="card aspect-[6/7] w-full min-h-[340px] sm:min-h-0 sm:w-[90%] p-4 my-4"
               key={moment.id}
             >
-              <div className="relative w-full h-2/3 bg-gray-100">
+              <div className="relative w-full h-2/3 min-h-[220px] sm:min-h-0 bg-gray-100">
                 <Image src={moment.image.url} layout="fill" objectFit="cover" />
               </div>
               <div className="w-full h-1/3 mt-2 py-4 flex items-center justify-center">

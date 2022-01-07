@@ -31,7 +31,7 @@ const Navbar = () => {
       <div className="header w-full max-w-[2000px] mx-auto h-16 bg-white flex items-center justify-between px-5 sticky top-0 z-50" ref={menuRef}>
         <div className="logo">
           <Link href="/">
-            <a className="relative w-44 flex items-center justify-between">
+            <a className="relative w-44 flex items-center justify-between" onClick={() => setMenuOpen(false)}>
               <Image src="/images/logo.svg" width={50} height={50} />
               <div className="relative hidden sm:flex">
                 <Image src="/images/logo_title.svg" width={120} height={50} />
@@ -49,7 +49,7 @@ const Navbar = () => {
         </div>
 
         <div
-          className={`nav bg-white flex fixed md:static justify-between h-full md:pb-0 md:h-full flex-col md:flex-row w-[300px] md:w-auto top-16 transition-[right] transform duration-[1s] ease-in-out ${
+          className={`nav bg-white flex fixed md:static justify-between h-full md:pb-0 md:h-full flex-col md:flex-row w-[300px] md:w-auto top-16 transition-[right] transform duration-500 ease-in-out ${
             menuOpen ? "right-0" : "-right-[300px]"
           } `}
         >
@@ -65,6 +65,7 @@ const Navbar = () => {
               } `}
               onClick={(e) => {
                 e.preventDefault();
+                setMenuOpen(false);
                 router.push(link.link);
               }}
             >
